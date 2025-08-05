@@ -18,3 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
         isOpened = !isOpened
     });
 });
+
+//SOBRE COLLAPSIBLE
+const collapsibleBoxEls = document.querySelectorAll(".collapsible-box")
+collapsibleBoxEls.forEach(boxEl => {
+    const boxHeader = boxEl.querySelector(".collapsible-header")
+    const boxArrow = boxHeader.querySelector(".collapsible-arrow")
+    const boxContent = boxEl.querySelector(".collapsible-content")
+
+    console.log(boxHeader)
+
+    boxHeader.addEventListener('click', () => {
+        if (boxContent.classList.contains("disabled")) {
+            boxArrow.style.animation = "arrow-opening 0.5s ease-in-out forwards"
+        }
+        else {
+            boxArrow.style.animation = "arrow-closing 0.5s ease-in-out forwards"
+        }
+        
+        boxContent.classList.toggle("disabled");
+    })
+});

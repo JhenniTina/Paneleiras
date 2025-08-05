@@ -44,6 +44,10 @@ input {
     margin-right: 5px;
 }
 
+.disabled {
+    display: none;
+}
+
 /*============================
            HEADER
 ===========================*/
@@ -195,9 +199,56 @@ main{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+#sobre p {
+    font-size: 20px;
+}
+#sobre h2 {
+    font-size: 30px;
+}
 
 .subtitulo {
     padding: 3%;
+}
+
+.collapsible-box {
+    max-width: 100vw;
+    margin-top: 40px;
+    cursor: pointer;
+}
+.collapsible-header {
+    background-color: #1d1111;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding:  15px 30px;
+}
+@keyframes arrow-opening {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+@keyframes arrow-closing {
+    from {
+        rotate: (180deg);
+    }
+
+    to {
+        rotate: (0);
+    }
+}
+.collapsible-content {
+    background-color: #2e1b18;
+    max-width: 100vw;
+    padding: 30px;
+}
+.collapsible-content .image-container {
+    padding-top: 20px;
 }
 
 /*============================
@@ -362,10 +413,19 @@ footer h4 {
 
 /*     --= MAIN =--     */
 @media (max-width: 800px) {
+    #sobre {
+        width: 95%;
+    }
+
     .titulo {
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+}
+@media (max-width: 455px) {
+    .collapsible-content .image-container img {
+        width: 100px;
     }
 }
 
